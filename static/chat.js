@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         var message = messageInput.val();
         if (message) {
-            //chatBox.append("<p class='message-sent'>" + message + "</p>");
+            chatBox.append("<p class='message-sent'>" + "问：" + message + "</p>");
 
             $.ajax({
                 url: "/send-message",

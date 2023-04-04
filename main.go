@@ -11,10 +11,10 @@ func main() {
 	http.HandleFunc("/send-message", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
 			message := r.FormValue("message")
-			fmt.Fprintf(w, "问："+message+"\n")
+			//fmt.Fprintf(w, "问："+message+"\n")
 
 			response, err := glm.Completions("wo", message)
-			fmt.Fprintf(w, "金科小兴:"+response)
+			fmt.Fprintf(w, "金科小兴："+response)
 
 			// 打开文件
 			file, err := os.OpenFile("output.txt", os.O_CREATE|os.O_WRONLY, 0644)
