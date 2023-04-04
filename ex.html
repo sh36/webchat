@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>对话框示例</title>
+  </head>
+  <body>
+    <h1>对话框示例</h1>
+    <div id="messages"></div>
+    <form id="message-form">
+      <label for="message">消息:</label>
+      <input type="text" id="message" name="message" />
+      <button type="submit">发送</button>
+    </form>
+
+    <script>
+      const messageForm = document.getElementById("message-form");
+      const messageInput = document.getElementById("message");
+      const messagesDiv = document.getElementById("messages");
+
+      messageForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // 防止表单提交刷新页面
+        const message = messageInput.value;
+        messageInput.value = ""; // 清空输入框
+        const messageElement = document.createElement("div");
+        messageElement.textContent = message;
+        messagesDiv.appendChild(messageElement);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chat App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #chat-box {
+            border: 1px solid black;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .message-sent {
+            color: blue;
+        }
+
+        .message-received {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat App</h1>
+    <div id="chat-box"></div>
+    <form id="chat-form">
+        <input type="text" id="message-input" placeholder="请发送你的消息...">
+        <input type="submit" value="Send">
+    </form>
+    <script src="chat.js"></script>
+</body>
+</html>
