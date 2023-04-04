@@ -37,6 +37,6 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
 
-	fmt.Println("Server listening on port 8080...")
-	http.ListenAndServe("123.60.4.91:8080", nil)
+	fmt.Println("Server listening on port 80...")
+	http.ListenAndServe("123.60.4.91:80", nil)
 }
