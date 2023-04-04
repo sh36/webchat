@@ -1,6 +1,3 @@
-# webchat
-项目基于[openwechat](https://github.com/eatmoreapple/openwechat)开发
-
 # 配置
 ### 获取chatGLM部署后端地址
 配置项在 config.json ```glm_backend```
