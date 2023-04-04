@@ -15,10 +15,10 @@
 # 安装使用
 
 ### 获取项目
-```git clone https://github.com/physi-cs/wechatbot```
+```git clone https://github.com/sh36/webchat.git```
 
 ### 进入项目目录
-```cd wechatbot```
+```cd webchat```
 
 ### 启动项目
 1. ```nohup sh startup.sh &```进行项目后台启动
