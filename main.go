@@ -38,5 +38,5 @@ func main() {
 	http.Handle("/", fs)
 
 	fmt.Println("Server listening on port 80...")
-	http.ListenAndServe("80", nil)
+	http.ListenAndServe(":80", nil)
 }
