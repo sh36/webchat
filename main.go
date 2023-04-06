@@ -11,12 +11,12 @@ func main() {
 	http.HandleFunc("/send-message", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
 			// 从请求中获取唯一标识符
-			userID := r.FormValue("user_id")
+			remoteAddr := r.RemoteAddr
 
 			message := r.FormValue("message")
 			//fmt.Fprintf(w, "问："+message+"\n")
 
-			response, err := glm.Completions(userID, message)
+			response, err := glm.Completions(remoteAddr, message)
 			fmt.Fprintf(w, "金科小兴："+response)
 
 			// 打开文件
@@ -28,6 +28,7 @@ func main() {
 			defer file.Close()
 
 			// 写入文件
+			_, err = file.WriteString("remoteAddr:" + remoteAddr + "\n")
 			_, err = file.WriteString("message:" + message + "\n")
 			_, err = file.WriteString("response:" + response)
 			if err != nil {
