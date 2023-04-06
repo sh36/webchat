@@ -5,11 +5,22 @@
     <title>Chat App</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
         #chat-box {
-            border: 1px solid black;
+            border: 1px solid #ccc;
             padding: 10px;
             height: 300px;
             overflow-y: scroll;
+            background-color: #fff;
         }
 
         .message-sent {
@@ -23,6 +34,35 @@
         .error {
             color: red;
         }
+
+        #chat-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #message-input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #message-input:focus {
+            outline: none;
+        }
+
+        #submit-button {
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #submit-button:hover {
+            background-color: #3e8e41;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +70,7 @@
     <div id="chat-box"></div>
     <form id="chat-form">
         <input type="text" id="message-input" placeholder="请发送你的消息...">
-        <input type="submit" value="Send">
+        <button type="submit" id="submit-button">发送</button>
     </form>
     <script src="chat.js"></script>
 </body>
