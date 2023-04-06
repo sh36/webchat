@@ -10,10 +10,13 @@ import (
 func main() {
 	http.HandleFunc("/send-message", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
+			// 从请求中获取唯一标识符
+			userID := r.FormValue("user_id")
+
 			message := r.FormValue("message")
 			//fmt.Fprintf(w, "问："+message+"\n")
 
-			response, err := glm.Completions("wo", message)
+			response, err := glm.Completions(userID, message)
 			fmt.Fprintf(w, "金科小兴："+response)
 
 			// 打开文件

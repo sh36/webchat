@@ -1,6 +1,6 @@
 {
     "glm_backend": "http://direct.virtaicloud.com:25456/",
-    "max_boxes" : 5,
+    "max_boxes" : 10,
     "user_count" : 1000
   }
   
